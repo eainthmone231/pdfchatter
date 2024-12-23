@@ -16,3 +16,4 @@ groq
 markdown
 hf_transfer
 ollama
+python-poppler
