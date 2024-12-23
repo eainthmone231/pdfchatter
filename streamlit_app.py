@@ -66,6 +66,11 @@ if session_file.exists():
 else:
     chat_history = []
 
+# Show demo video when "Demo" button is pressed
+if st.button("Show Demo Video"):
+    st.header("Demo Video")
+    st.video("chatterbot.mp4")
+
 # File Upload
 uploaded_files = st.file_uploader(
     "Upload documents to index", accept_multiple_files=True
@@ -80,7 +85,7 @@ if st.button("Index Files"):
                 f.write(file.getbuffer())
         
         try:
-            with st.spinner('Indexing files...'):
+            with st.spinner('Indexing files... It may take too long cause of the cpu only runtime.'):
                 index_name = session_id
                 index_path = INDEX_FOLDER / index_name
                 RAG = index_documents(str(session_folder), index_name=str(index_name), index_path=str(index_path))
