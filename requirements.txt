@@ -16,4 +16,3 @@ groq
 markdown
 hf_transfer
 ollama
-poppler-utils
